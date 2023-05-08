@@ -7,6 +7,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { HeaderComponent } from './components/header/header.component';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { SavedNotesComponent } from './components/saved-notes/saved-notes.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SavedNotesComponent } from './components/saved-notes/saved-notes.compon
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
