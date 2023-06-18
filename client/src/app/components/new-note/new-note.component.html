@@ -1,1 +1,19 @@
-<p>new-note works!</p>
+<div class="panel-center">
+  <mat-expansion-panel #panel hideToggle>
+  <mat-expansion-panel-header *ngIf="!panel.expanded">
+    Click Here to Add Note
+  </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput placeholder="Title">
+    </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Note">
+  </mat-form-field>
+  <mat-action-row>
+    <button mat-raised-button (click)="submit()">Submit</button>
+    <button mat-raised-button (click)="panel.close()">Discard</button>
+  </mat-action-row>
+  </mat-expansion-panel>
+</div>
+
+

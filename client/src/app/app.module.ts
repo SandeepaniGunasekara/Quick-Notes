@@ -8,6 +8,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { SavedNotesComponent } from './components/saved-notes/saved-notes.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     NewNoteComponent,
     SavedNotesComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatToolbarModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatExpansionModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
