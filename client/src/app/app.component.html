@@ -1,2 +1,4 @@
 <app-header></app-header>
-<app-new-note></app-new-note>
+<app-new-note [notes]="savedNotes.notes"></app-new-note>
+<app-saved-notes #savedNotes></app-saved-notes>
+

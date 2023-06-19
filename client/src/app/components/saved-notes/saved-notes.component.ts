@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Note} from "../../../models/note.model";
 
 @Component({
   selector: 'app-saved-notes',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./saved-notes.component.css']
 })
 export class SavedNotesComponent {
+  notes: Note[]=[];
 
 }
