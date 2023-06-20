@@ -8,5 +8,17 @@ import {Note} from "../../../models/note.model";
 })
 export class SavedNotesComponent {
   notes: Note[]=[];
+  longText:string='';
+  showDeleteIcon=false;
+  showUpdateIcon=false;
 
+  showIcons() {
+    this.showDeleteIcon = true;
+    this.showUpdateIcon = true;
+  }
+
+  hideIcons() {
+    this.showDeleteIcon = false;
+    this.showUpdateIcon = false;
+  }
 }

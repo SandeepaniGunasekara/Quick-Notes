@@ -12,6 +12,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -20,16 +22,18 @@ import {MatButtonModule} from "@angular/material/button";
     NewNoteComponent,
     SavedNotesComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        AppRoutingModule,
-        MatToolbarModule,
-        MatExpansionModule,
-        FormsModule,
-        MatInputModule,
-        MatButtonModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
