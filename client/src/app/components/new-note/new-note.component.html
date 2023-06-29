@@ -1,17 +1,17 @@
 <div class="panel-center">
-  <mat-expansion-panel #panel hideToggle>
-  <mat-expansion-panel-header *ngIf="!panel.expanded">
+  <mat-expansion-panel hideToggle [(expanded)]="expanded" (closed)="newEmptyNote()">
+  <mat-expansion-panel-header *ngIf="!expanded">
     Click Here to Add Note
   </mat-expansion-panel-header>
     <mat-form-field>
-      <input matInput placeholder="Title" [(ngModel)]="title">
+      <input matInput placeholder="Title" [(ngModel)]="currentNote.title">
     </mat-form-field>
   <mat-form-field>
-    <textarea matInput placeholder="Note" [(ngModel)]="body"></textarea>
+    <textarea matInput placeholder="Note" [(ngModel)]="currentNote.body"></textarea>
   </mat-form-field>
   <mat-action-row>
     <button mat-raised-button (click)="submit()">Submit</button>
-    <button mat-raised-button (click)="panel.close()">Discard</button>
+    <button mat-raised-button (click)="expanded=false">Discard</button>
   </mat-action-row>
   </mat-expansion-panel>
 </div>

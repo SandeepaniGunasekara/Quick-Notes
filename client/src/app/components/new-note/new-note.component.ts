@@ -10,18 +10,36 @@ import {identity} from "rxjs";
 export class NewNoteComponent {
   expanded = false;
   @Input() notes: Note[] = [];
-  title: string='';
-  body: string='';
-
-
+  emptyNote:Note= {
+    id:0,
+    title:'',
+    body:''
+  };
+ currentNote!: Note;
+ constructor() {
+   this.newEmptyNote();
+ }
+ newEmptyNote(){
+   this.currentNote=JSON.parse(JSON.stringify(this.emptyNote))
+ }
 
   submit() {
-    let note:Note ={
-      title:this.title,
-      body:this.body,
-      id:Math.random()*100
+    if (this.currentNote.id==0){
+      let note:Note ={
+        title:this.currentNote.title,
+        body:this.currentNote.body,
+        id:Math.random()*100
+      }
+      this.notes.push(note);
     }
-  this.notes.push(note);
+    else {
+      const index=this.notes.findIndex(note=>{
+        note.id=this.currentNote.id;
+      })
+      this.notes[index]=this.currentNote
+    }
+    this.expanded=false;
+
   }
 
 }

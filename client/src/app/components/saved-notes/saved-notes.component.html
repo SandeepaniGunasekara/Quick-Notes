@@ -1,12 +1,23 @@
-<mat-card *ngFor="let note of notes" class="mat-card" (mouseover)="showIcons()" (mouseleave)="hideIcons()">
+<mat-card *ngFor="let note of notes" class="mat-card">
   <mat-card-header>
-    <mat-card-actions>
-      <button mat-icon-button class="delete-button" *ngIf="showDeleteIcon"><mat-icon>delete</mat-icon></button>
-      <button mat-button class="update-button" *ngIf="showUpdateIcon"><mat-icon>create</mat-icon></button>
-    </mat-card-actions>
+    <span class="header-buttons">
+      <button mat-icon-button class="delete-button" (click)="deleteNote(note)"><mat-icon>delete</mat-icon></button>
+      <button mat-icon-button class="update-button"(click)="editNoteForm(note)"><mat-icon>create</mat-icon></button>
+    </span>
     <mat-card-title>{{ note.title }}<br>  </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p>{{note.body}}</p>
   </mat-card-content>
 </mat-card>
+
+<div class="note-edit-panel" *ngIf="editingNote">
+  <h2>Edit Note</h2>
+  <form (submit)="saveEditedNote()">
+    <input type="text" [(ngModel)]="editingNote.title" placeholder="Title" required>
+    <textarea [(ngModel)]="editingNote.body" placeholder="Body" required></textarea>
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+

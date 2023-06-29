@@ -1,4 +1,4 @@
 <app-header></app-header>
-<app-new-note [notes]="savedNotes.notes"></app-new-note>
-<app-saved-notes #savedNotes></app-saved-notes>
+<app-new-note [notes]="savedNotes.notes" #newNote></app-new-note>
+<app-saved-notes #savedNotes [newNoteCom]="newNote"></app-saved-notes>
 

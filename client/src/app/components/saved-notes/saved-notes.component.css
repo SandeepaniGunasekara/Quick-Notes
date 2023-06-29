@@ -10,5 +10,11 @@ mat-card{
   grid-gap: 10px;
 }
 
+.header-buttons{
+  visibility: hidden;
+}
 
+mat-card:hover .header-buttons{
+  visibility: visible;
+}
 
