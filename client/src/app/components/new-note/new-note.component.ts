@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Note} from "../../../models/note.model";
-import {identity} from "rxjs";
+import {Note} from "../../models/note.model";
+import {NoteService} from "../../services/note.service";
 
 @Component({
   selector: 'app-new-note',
@@ -16,9 +16,13 @@ export class NewNoteComponent {
     body:''
   };
  currentNote!: Note;
- constructor() {
+  private id: number=0;
+
+ constructor(private noteService: NoteService) {
    this.newEmptyNote();
  }
+
+
  newEmptyNote(){
    this.currentNote=JSON.parse(JSON.stringify(this.emptyNote))
  }
@@ -42,5 +46,24 @@ export class NewNoteComponent {
 
   }
 
+  createNote(){
+    this.noteService.addNote(this.currentNote).subscribe({
+      next: res => {
+        console.log(res);
+      },
+      complete: () => {
+        this.getNotes();
+      }
+  })
+
 }
 
+ getNotes(){
+this.noteService.fetchNote().subscribe({
+  next:res=>{
+    this.notes=res;
+  }
+})
+ }
+
+}

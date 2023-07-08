@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Note} from "../../../models/note.model";
 import {NewNoteComponent} from "../new-note/new-note.component";
+import {Note} from "../../models/note.model";
 
 // @ts-ignore
 @Component({
